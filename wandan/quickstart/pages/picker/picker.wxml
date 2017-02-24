@@ -1,0 +1,35 @@
+<view class="page"> 
+    <!--普通选择器 mode="selector"-->
+    <view>
+        <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+            <view>当前选择：{{array[index]}}</view>
+        </picker>
+    </view>
+    <!--时间选择器-->
+    <view>
+        <picker mode="time" value="{{time}}" start="09:00" end="13:00" bindchange='bindTimeChange'> 
+            <view>当前选择：{{time}}</view>
+        </picker>
+    </view>
+    <!--日期选择器-->
+    <view>
+        <picker mode="date" value="{{dates}}" start="2015-01-01" end="2018-01-01" bindchange="bindDateChange">
+            当前日期：{{dates}}
+        </picker>
+    </view>
+    <!--picker-view-->
+    <view>
+        <view>{{year}}年{{month}}月{{day}}日</view>
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChangeView">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>
